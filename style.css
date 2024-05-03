@@ -6,7 +6,7 @@
 
 :root {
 	color-scheme: dark;
-	font-family: "Roboto";
+	font-family: "sans-serif;";
 	font-weight: 300;
 }
 
@@ -55,6 +55,7 @@ div.socials {
 
 a.social {
 	display: flex;
+	font-family: sans-serif;
 	padding: 13px;
 	min-width: 202px;
 	border-radius: 20px;
@@ -183,7 +184,7 @@ a.social.discord{
 	margin-right: auto;
 	max-width: 900px;
 
-	font-size: 31px;
+	font-size: 27px;
 /*	font-weight: 4000;*/
 font-family: serif;
 }
@@ -253,6 +254,7 @@ a.linkish {
 
 a.linkish::before {
 	content: "";
+	pointer-events: none;
 	position: absolute;
 	left: 0;
 	top: 100%;
@@ -284,6 +286,9 @@ a.linkish:hover {
 	50% {
 		left: 0;
 		width: 30%;
+	}
+	60% {
+		width: 80%;
 	}
 	100% {
 		left: 10%;
@@ -337,6 +342,9 @@ a.linkish.no-under:hover::before {
 	50% {
 		width: 30%;
 		left: 0;
+	}
+	60% {
+		width: 80%;
 	}
 	100% {
 		width: 80%;
