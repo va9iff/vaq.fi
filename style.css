@@ -4,126 +4,32 @@
 	box-sizing: border-box;
 }
 
+body {
+	color: #eeeeee;
+	background-color: #000000;
+}
+
 :root {
 	color-scheme: dark;
 	font-family: "sans-serif";
 	font-weight: 300;
 }
 
-body {
-	color: #eeeeee;
-	background-color: #000000;
-}
+.row, .col { display: flex }
+.col { flex-direction: column }
+.centered { align-items: center }
+.middle { justify-self: center }
+.wrap { flex-wrap: wrap }
+.center-text { text-align: center; }
 
-.hash-section {
-	padding-top: 64px;
-	text-align: center;
-/*	font-size: 43px;*/
+/* sticky blurry top bar */
+.blurry-sticky {
+	position: sticky;
+	top: 0;
+	z-index: 69;
+	padding: 3px 90px;
+	backdrop-filter: blur(20px) brightness(0.8);
 }
-.hash-section .hyperlink-hash {
-	text-decoration: none;
-	color: #333333;
-	margin-right: 5px;
-}
-
-.me {
-	margin-left: auto;	
-	display: flex;
-	align-items: center;
-	gap: 30px;
-/*	font-size: 20px;*/
-}
-.me img.pp {
-	border-radius: 50%;
-}
-
-/* contact  */
-
-div.socials {
-	display: flex;
-	justify-content: space-around;
-	flex-wrap: wrap;
-	gap: 30px;
-	padding: 50px;
-}
-
-a.social {
-	display: flex;
-	font-family: sans-serif;
-	padding: 13px;
-	min-width: 202px;
-	border-radius: 20px;
-	text-decoration: none;
-	align-items: center;
-	color: #ffffffaa;
-/*	-webkit-tap-highlight-color: var(--border-highliglht);*/
-	-webkit-tap-highlight-color: transparent;
-
-	transition: 300ms;
-	box-shadow: 0 0 0 0 var(--highliglht) inset, 0 0 0 1px #9999;
-	/*border-top-left-radius: 0;
-	border-bottom-left-radius: 0;
-	box-shadow: 2px 0 0 0 var(--highliglht) inset;*/
-	--highliglht: hsl(355deg, 100%, 63%);
-	--border-highliglht: hsla(355deg, 100%, 73%, 0.6);
-}
-a.social:hover {
-	box-shadow: 80px 0 60px -40px var(--highliglht) inset, 0 0 0 1px var(--border-highliglht);
-	color: #ffffffee;
-	background-color: #111829;
-	border-radius: 20px;
-	transition: 200ms;
-}
-a.social:focus {
-	box-shadow: 100px 0 60px -50px var(--highliglht) inset, 0 0 0 1px var(--border-highliglht);
-	border-radius: 20px;
-}
-a.social:active {
-	box-shadow: 180px 0 60px -50px var(--highliglht) inset, 0 0 0 1px var(--border-highliglht);
-	border-radius: 20px;
-
-}
-a.social img.icon {
-	opacity: 0.6;
-	transition: 300ms;
-}
-a.social:hover img.icon {
-	opacity: 1;
-}
-a.social div.text {
-	display: flex;
-	gap: 4px;
-	padding-left: 15px;
-
-	flex-direction: column;
-}
-
-a.social div.text span.platform{
-	font-size: 19px;
-}
-a.social div.text span.nick{
-	font-size: 17px
-}
-
-/* socials customising  */
-a.social.linkedin {
-	--highliglht: hsl(210deg, 87%, 41%);
-	--border-highliglht: hsla(210deg, 87%, 51%, 0.6);
-}
-a.social.github {
-	--highliglht: hsl(132deg, 77%, 41%);
-	--border-highliglht: hsla(132deg, 77%, 51%, 0.6);
-}
-a.social.telegram{
-	--highliglht: hsl(200deg, 75%, 51%);
-	--border-highliglht: hsla(200deg, 75%, 61%, 0.6);
-}
-a.social.discord{
-	--highliglht: hsl(234deg, 78%, 63%);
-	--border-highliglht: hsla(234deg, 78%, 63%, 0.6);
-}
-
-/* sticky */
 
 .blurry-sticky::after {
 	content: "";
@@ -136,41 +42,14 @@ a.social.discord{
 	border-radius: 50%;
 }
 
-.blurry-sticky {
-	position: sticky;
-	top: 0;
-	z-index: 69;
-	padding: 3px 90px;
-	display: flex;
-/*	backdrop-filter: blur(20px);*/
-	backdrop-filter: blur(20px) brightness(0.8);
-}
-
 .blurry-sticky ul.menu {
 	list-style-type: none;
-	display: flex;
-	align-items: center;
 	gap: 20px;
 }
 
 @media only screen and (max-width: 400px) {
 	.blurry-sticky {
 		padding: 4px 2px;
-	}
-}
-
-.centered-text-flow {
-	margin-left: auto;
-	margin-right: auto;
-	padding: 0 20px;
-	max-width: 900px;
-/*	font-size: 27px;*/
-	font-family: serif;
-}
-
-@media only screen and (max-width: 600px) {
-	.centered-text-flow {
-/*		font-size: 23px;*/
 	}
 	.blurry-sticky span.name {
 		display: none;
@@ -179,19 +58,65 @@ a.social.discord{
 		padding: 3px 9px;
 	}
 }
+
 @media only screen and (max-height: 200px) {
 	.blurry-sticky {
 		position: relative;
 	}
 }
 
+/* Sections */
+
+.centered-section {
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0 20px;
+	max-width: 900px;
+	font-family: serif;
+}
+.centered-section p {
+	padding-top: 15px;	
+}	
+
+.subsection-padding-top {
+	padding-top: 64px;
+
+}
+
+.hyperlink-hash {
+	text-decoration: none;
+	color: #333333;
+	margin-right: 5px;
+}
+
+.me {
+	margin-left: auto;	
+	gap: 30px;
+}
+.me img.pp {
+	border-radius: 50%;
+	transition: 200ms;
+	transition-delay: 400ms;
+	z-index: 70;
+}
+.me img.pp:hover {
+	transition-delay: 0ms;
+	transform-origin: top right;
+	transform: scale(3.7);
+	border-radius: 3px;
+	box-shadow: -3px 4px 7px #0009;
+}
+@media only screen and (max-width: 400px) {
+	.me img.pp {
+		transition-delay: 0ms;
+	}
+}
+
 .education {
-	display: flex;
-	align-items: center;
-	flex-wrap: wrap;
 	margin-top: 60px;
 }
 
+/* COOL LINK  */
 
 a.linkish {
 	text-decoration: none;
@@ -373,6 +298,7 @@ blockquote {
     font-size: 21px; /* Example size for f6 */
 }
 
+/* why 600? don't we use 400 for break pointing */
 @media (max-width: 600px) {
     .f1 {
         font-size: 36px; /* Mobile size for f1 */
@@ -397,4 +323,136 @@ blockquote {
     .f6 {
         font-size: 18px; /* Mobile size for f6 */
     }
+}
+
+/* impactful chips */
+
+div.socials {
+	display: flex;
+/*	justify-content: space-around;*/
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 30px;
+	padding: 50px 0;
+}
+
+a.social {
+	display: flex;
+	font-family: sans-serif;
+	padding: 20px;
+	min-width: 202px;
+	border-radius: 30px;
+	text-decoration: none;
+	align-items: center;
+	color: #ffffffaa;
+/*	-webkit-tap-highlight-color: var(--border-highlight);*/
+	-webkit-tap-highlight-color: transparent;
+
+	transition: 300ms, box-shadow 0ms, margin 400ms;
+/*	box-shadow: 0 0 0 0 var(--highlight) inset, 0 0 0 1px #9999;*/
+	/*border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	box-shadow: 2px 0 0 0 var(--highlight) inset;*/
+	border: 1px solid #9999;
+	--highlight: hsl(355deg, 100%, 63%);
+	--border-highlight: hsla(355deg, 100%, 73%, 0.2);
+	box-shadow: 0 0 0 30px transparent inset;
+}
+/*@keyframes impact-anim{*/
+/*	from {*/
+/*		box-shadow: 0 0 0 60px var(--border-highlight) inset;*/
+/*	}*/
+/*	to {*/
+/*		box-shadow: 0 0 0 20px var(--border-highlight) inset;*/
+/*	}*/
+/*}*/
+
+
+a.social:hover {
+	transform: scale(1.1);
+	translate: 0 -10px;
+/*	margin: 0 30px;*/
+	background-color: var(--highlight);
+	box-shadow: 0 0 0 2px var(--border-highlight) inset;
+	box-shadow-color: red;
+/*	box-shadow: 80px 0 60px -40px var(--highlight) inset, 0 0 0 1px var(--border-highlight);*/
+/*	color: #ffffffee;*/
+/*	background-color: #111829;*/
+	transition: 200ms, margin 400ms, transform 700ms;
+}
+a.social:focus {
+	box-shadow: 100px 0 60px -50px var(--highlight) inset, 0 0 0 1px var(--border-highlight);
+}
+a.social:active {
+	box-shadow: 180px 0 60px -50px var(--highlight) inset, 0 0 0 1px var(--border-highlight);
+
+}
+a.social img.icon {
+	opacity: 0.6;
+	transition: 300ms;
+}
+a.social:hover img.icon {
+	opacity: 1;
+}
+a.social div.text {
+	display: flex;
+	gap: 4px;
+	padding-left: 15px;
+
+	flex-direction: column;
+}
+
+a.social div.text span.platform{
+/*	font-size: 19px;*/
+}
+a.social div.text span.nick{
+/*	font-size: 17px*/
+}
+
+/* socials customising  */
+a.social.linkedin {
+	--highlight: hsla(210deg, 87%, 41%, 0.2);
+	--border-highlight: hsla(210deg, 87%, 51%, 1);
+}
+a.social.github {
+	--highlight: hsla(132deg, 77%, 41%, 0.2);
+	--border-highlight: hsla(132deg, 77%, 51%, 1);
+}
+a.social.telegram{
+	--highlight: hsla(200deg, 75%, 51%, 0.2);
+	--border-highlight: hsla(200deg, 75%, 61%, 1);
+}
+a.social.discord{
+	--highlight: hsla(234deg, 78%, 63%, 0.2);
+	--border-highlight: hsla(234deg, 78%, 63%, 1);
+}
+a.social.instagram{
+	--highlight: hsla(355deg, 100%, 73%, 0.2);
+	--border-highlight: hsla(355deg, 100%, 73%, 1);
+}
+
+@media only screen and (max-width: 400px) {
+	div.socials {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		gap: 12px;
+		padding: 20px 0px;
+	}
+	div.socials a.social {
+		padding: 10px 20px;
+		border-radius: 20px;
+	}
+	div.socials div.text .nick {
+		margin-left: auto;
+	}
+	div.socials img {
+		width: 40px !important;
+		height: 40px !important;
+	}
+	a.social div.text {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: row;
+	}
 }
