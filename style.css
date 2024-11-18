@@ -6,7 +6,7 @@
 
 :root {
 	color-scheme: dark;
-	font-family: "sans-serif;";
+	font-family: "sans-serif";
 	font-weight: 300;
 }
 
@@ -18,7 +18,7 @@ body {
 .hash-section {
 	padding-top: 64px;
 	text-align: center;
-	font-size: 43px;
+/*	font-size: 43px;*/
 }
 .hash-section .hyperlink-hash {
 	text-decoration: none;
@@ -31,7 +31,7 @@ body {
 	display: flex;
 	align-items: center;
 	gap: 30px;
-	font-size: 20px;
+/*	font-size: 20px;*/
 }
 .me img.pp {
 	border-radius: 50%;
@@ -164,13 +164,13 @@ a.social.discord{
 	margin-right: auto;
 	padding: 0 20px;
 	max-width: 900px;
-	font-size: 27px;
+/*	font-size: 27px;*/
 	font-family: serif;
 }
 
 @media only screen and (max-width: 600px) {
 	.centered-text-flow {
-		font-size: 23px;
+/*		font-size: 23px;*/
 	}
 	.blurry-sticky span.name {
 		display: none;
@@ -178,34 +178,19 @@ a.social.discord{
 	.blurry-sticky {
 		padding: 3px 9px;
 	}
-	div.socials {
-		padding: 16px;
+}
+@media only screen and (max-height: 200px) {
+	.blurry-sticky {
+		position: relative;
 	}
 }
 
 .education {
-	font-size: 28px;
 	display: flex;
 	align-items: center;
-	border-radius: 13px;
-	flex-wrap: wrap
-/*	font-size: 52px;*/
-/*	background-color: red;*/
-/*	max-width: 500px;*/
+	flex-wrap: wrap;
+	margin-top: 60px;
 }
-
-
-#education {
-	display: flex;
-	justify-content: center;
-}
-
-
-h1 {
-/*	font-size: 47px;*/
-}
-
-
 
 
 a.linkish {
@@ -215,24 +200,6 @@ a.linkish {
 	color: #fff;
 
 }
-
-/*.textish a::before {
-	content: "";
-	position: absolute;
-	left: 50%;
-	transform: scaleX(-1);
-	top: 100%;
-	width: 0;
-	height: 1px;
-	background-color: #eee;
-	transition: left 800ms, width 200ms, transform 0ms;
-}
-.textish a:hover::before {
-	transition: left 300ms, width 600ms, transform 400ms;
-	transform: scaleX(1.0);
-	left: 0;
-	width: 100%;
-}*/
 
 a.linkish::before {
 	content: "";
@@ -358,3 +325,76 @@ a.linkish.no-under:hover::before {
 }
 
 
+.uni-name {
+	font-size: 51px;
+	padding-right: 30px;
+/*	font-weight: 500;*/
+
+}
+
+blockquote {
+	opacity: 0.7;
+	border-left: 7px solid #333;
+	padding-left: 15px;
+}
+
+
+
+/* CustomSelections */
+::selection {
+    background-color: #8883; /* Change this to your desired background color */
+    color: #EFD789; /* Change this to your desired text color */
+}
+
+/**** Fonts ****/
+
+/* Default font sizes in pixels */
+.f1 {
+    font-size: 48px; /* Example size for f1 */
+}
+
+.f2 {
+    font-size: 42px; /* Example size for f2 */
+}
+
+.f3 {
+    font-size: 36px; /* Example size for f3 */
+}
+
+.f4 {
+    font-size: 30px; /* Example size for f4 */
+}
+
+.f5 {
+    font-size: 24px; /* Example size for f5 */
+}
+
+.f6 {
+    font-size: 21px; /* Example size for f6 */
+}
+
+@media (max-width: 600px) {
+    .f1 {
+        font-size: 36px; /* Mobile size for f1 */
+    }
+
+    .f2 {
+        font-size: 33px; /* Mobile size for f2 */
+    }
+
+    .f3 {
+        font-size: 30px; /* Mobile size for f3 */
+    }
+
+    .f4 {
+        font-size: 27px; /* Mobile size for f4 */
+    }
+
+    .f5 {
+        font-size: 21px; /* Mobile size for f5 */
+    }
+
+    .f6 {
+        font-size: 18px; /* Mobile size for f6 */
+    }
+}
