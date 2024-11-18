@@ -15,32 +15,26 @@ body {
 	background-color: #000000;
 }
 
-/* items */
-
-.sectioner {
-	padding-top: 64px; /*!*/
-/*	padding-left: 40px;*/
+.hash-section {
+	padding-top: 64px;
 	text-align: center;
 	font-size: 43px;
 }
-.sectioner .hyperlink-hash {
+.hash-section .hyperlink-hash {
 	text-decoration: none;
 	color: #333333;
 	margin-right: 5px;
 }
 
-/* header */
-
-.myname {
+.me {
 	margin-left: auto;	
 	display: flex;
 	align-items: center;
 	gap: 30px;
 	font-size: 20px;
 }
-.myname img.pp {
+.me img.pp {
 	border-radius: 50%;
-	align-items: center;
 }
 
 /* contact  */
@@ -131,7 +125,7 @@ a.social.discord{
 
 /* sticky */
 
-.sticky::after {
+.blurry-sticky::after {
 	content: "";
 	position: absolute;
 	left: 0;
@@ -142,58 +136,46 @@ a.social.discord{
 	border-radius: 50%;
 }
 
-.sticky {
+.blurry-sticky {
 	position: sticky;
 	top: 0;
 	z-index: 69;
 	padding: 3px 90px;
 	display: flex;
-	backdrop-filter: blur(20px);
-/*	backdrop-filter: blur(20px) brightness(+60%);*/
-/*	background-color: #2222;*/
+/*	backdrop-filter: blur(20px);*/
+	backdrop-filter: blur(20px) brightness(0.8);
 }
 
-.sticky ul.menu {
+.blurry-sticky ul.menu {
 	list-style-type: none;
 	display: flex;
 	align-items: center;
 	gap: 20px;
-	columns: #eee;
-	flex-grow: 1;
 }
 
 @media only screen and (max-width: 400px) {
-	.sticky {
+	.blurry-sticky {
 		padding: 4px 2px;
 	}
 }
 
-
-.content .flow {
-/*	border-left: 2px solid red;*/
-/*	border: 2px dotted red;*/
-/*	display: flex;*/
-/*	flex-direction: row;*/
-/*	justify-content: center;*/
-}
-
-.textish {
-/*	border: 2px dotted blue;*/
-	padding: 0 20px;
+.centered-text-flow {
 	margin-left: auto;
 	margin-right: auto;
+	padding: 0 20px;
 	max-width: 900px;
-
 	font-size: 27px;
-/*	font-weight: 4000;*/
-font-family: serif;
+	font-family: serif;
 }
 
 @media only screen and (max-width: 600px) {
-	.sticky span.name {
+	.centered-text-flow {
+		font-size: 23px;
+	}
+	.blurry-sticky span.name {
 		display: none;
 	}
-	.sticky {
+	.blurry-sticky {
 		padding: 3px 9px;
 	}
 	div.socials {
